@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+import django_heroku
 from django.utils.translation import ugettext_lazy as _
 from decouple import config,Csv
 import dj_database_url
@@ -143,3 +144,4 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
+django_heroku.settings(locals())
